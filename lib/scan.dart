@@ -7,14 +7,13 @@ class Scan extends StatefulWidget {
 }
 
 class _ScanState extends State<Scan> {
-
-
   String qrResult = "Not yet Scanned";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         title: Text("Scan"),
         centerTitle: true,
       ),
@@ -57,5 +56,3 @@ class _ScanState extends State<Scan> {
     );
   }
 }
-
-

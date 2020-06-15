@@ -16,17 +16,21 @@ class _HomepageState extends State<Homepage> {
         title: Text("QR Code Scanner & Generator"),
         centerTitle: true,
       ),
-      body: Container(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Image(image: AssetImage('images/qrcode.png')),
-            flatButton("Scan QR Code", Scan()),
-            SizedBox(height: 10.0,),
-            flatButton("Generate QR Code", Generate()),
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Image(image: AssetImage('images/qrcode.png')),
+              flatButton("Scan QR Code", Scan()),
+              SizedBox(
+                height: 10.0,
+              ),
+              flatButton("Generate QR Code", Generate()),
+            ],
+          ),
         ),
       ),
     );
@@ -41,9 +45,8 @@ class _HomepageState extends State<Homepage> {
             .push(MaterialPageRoute(builder: (context) => widget));
       },
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.0),
-        side: BorderSide(color: Colors.deepPurple, width: 3.0)
-      ),
+          borderRadius: BorderRadius.circular(20.0),
+          side: BorderSide(color: Colors.deepPurple, width: 3.0)),
     );
   }
 }
